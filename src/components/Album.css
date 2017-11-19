@@ -1,3 +1,9 @@
-.row {
+.album {
   margin-bottom: 20px;
+}
+.no-padding {
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }

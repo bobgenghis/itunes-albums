@@ -11,21 +11,25 @@ export const Album = (props) => {
         </Col>
 
         <Col className="albumContent text-left" xs={8} sm={9} md={10}>
-          Artist Name: <span>
-            {album.artistName}
-          </span><br />
+		  <Row>
+		    <Col xs={6} sm={3} md={2} className="text-right no-padding">Artist Name:</Col>
+		    <Col xs={6} sm={9} md={10}>{album.artistName}</Col>
+		  </Row>
 
-          Album Name: <span>
-            {album.collectionName}
-          </span><br />
+		  <Row>
+		    <Col xs={6} sm={3} md={2} className="text-right no-padding">Album Name:</Col>
+		    <Col xs={6} sm={9} md={10}>{album.collectionName}</Col>
+		  </Row>
 
-          Tracks: <span>
-            {album.trackCount}
-          </span><br />
-        
-          Year Released: <span>
-            {new Date(album.releaseDate).getFullYear(album.year)}
-          </span>
+		  <Row>
+		    <Col xs={6} sm={3} md={2} className="text-right no-padding">Tracks:</Col>
+		    <Col xs={6} sm={9} md={10}>{album.trackCount}</Col>
+		  </Row>
+
+		  <Row>
+		    <Col xs={6} sm={3} md={2} className="text-right no-padding">Year Released:</Col>
+		    <Col xs={6} sm={9} md={10}>{new Date(album.releaseDate).getFullYear(album.year)}</Col>
+		  </Row>
         </Col>
       </Row>
     );
