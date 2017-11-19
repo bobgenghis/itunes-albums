@@ -10,10 +10,10 @@
 }
 
 .left-addon .glyphicon { 
-  left: 0px !important;
+  left: 0px;
 }
 .right-addon .glyphicon {
-  right: 0px !important;
+  right: 0px;
 }
 
 .left-addon input {
@@ -21,4 +21,7 @@
 }
 .right-addon input {
   padding-right: 30px;
+}
+.glyphicon-search:empty {
+  width: 34px !important;
 }
