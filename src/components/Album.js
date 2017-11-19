@@ -6,11 +6,11 @@ export const Album = (props) => {
   let album = props.album;
   return (
       <Row className="album">
-        <Col className="albumArt text-right" xs={4}>
+        <Col className="albumArt text-right" xs={4} sm={3} md={2}>
           <img src={album.artworkUrl100} alt="Album Art"/>
         </Col>
 
-        <Col className="albumContent text-left" xs={8}>
+        <Col className="albumContent text-left" xs={8} sm={9} md={10}>
           Artist Name: <span>
             {album.artistName}
           </span><br />
