@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { AlbumList } from './components/AlbumList.js';
 import { SearchBar } from './components/SearchBar.js';
-import './App.css';
+import './ItunesAlbums.css';
 
-class App extends Component {
+class ItunesAlbums extends Component {
 	
   constructor(props) {
     super(props);
 
-    this.state = { artist: '', albums: []};
+    this.state = { albums: []};
     
 	this.updateAlbums = this.updateAlbums.bind(this);
   }
@@ -22,6 +22,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+	    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css"
+          rel="stylesheet" />
         <header className="App-header">
           <SearchBar onSubmit={this.updateAlbums} />
         </header>
@@ -32,4 +34,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default ItunesAlbums;

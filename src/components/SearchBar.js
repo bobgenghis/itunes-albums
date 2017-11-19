@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import './SearchBar.css';
 
 export class SearchBar extends Component {
   constructor(props) {
     super(props);
-	this.state = {
-	  searchText: ''
-	};
-	
-	this.handleChange = this.handleChange.bind(this);
+    this.state = {
+      searchText: ''
+    };
+
+    this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   
@@ -17,21 +18,21 @@ export class SearchBar extends Component {
   }
   
   handleSubmit(event) {
-	event.preventDefault();
-	this.getAlbums();
+    event.preventDefault();
+    this.getAlbums();
   }
   
   getAlbums() {
-	var self = this;
-	const artist = this.state.searchText;
-	const albumsUrl = 'https://itunes.apple.com/search?media=music&entity=album&attribute=artistTerm&term=' + artist;
-	axios.get(albumsUrl, {
-	  transformResponse: axios.defaults.transformResponse.concat(function (data, headers) {
+    var self = this;
+    const artist = this.state.searchText;
+    const albumsUrl = 'https://itunes.apple.com/search?media=music&entity=album&attribute=artistTerm&term=' + artist;
+    axios.get(albumsUrl, {
+      transformResponse: axios.defaults.transformResponse.concat(function (data, headers) {
         return data.results;
       })
-	})
-    .then(function (response) {	
-	  self.props.onSubmit(response.data);
+    })
+    .then(function (response) {
+      self.props.onSubmit(response.data);
     })
     .catch(function (error) {
       console.log(error);
@@ -40,13 +41,17 @@ export class SearchBar extends Component {
   
   render() {
     return (
-		<form onSubmit={this.handleSubmit}>
-		  <label>
-			Enter an artist name here:
-			<input type="text" name="name" onChange={this.handleChange}/>
-		  </label>
-		  <input type="submit" value="Submit" />
-		</form>
+        <form onSubmit={this.handleSubmit}>
+          <div className="container">
+            <div className="inner-addon right-addon">
+              <i className="glyphicon glyphicon-search"/>
+              <input type="text" className="form-control"
+                name="name"
+                placeholder="Enter an artist name here"
+                onChange={this.handleChange} />
+            </div>
+          </div>
+        </form>
     );
   }
 }
