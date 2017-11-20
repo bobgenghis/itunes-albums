@@ -22,25 +22,25 @@ export class Album extends Component {
         </Col>
 
         <Col className="albumContent text-left" xs={8} sm={9} md={10}>
-		  <Row>
-		    <Col xs={6} sm={3} md={2} className="text-right no-padding">Artist Name:</Col>
-		    <Col xs={6} sm={9} md={10}>{album.artistName}</Col>
-		  </Row>
+          <Row>
+            <Col xs={6} sm={3} md={2} className="text-right no-padding">Artist Name:</Col>
+            <Col xs={6} sm={9} md={10}>{album.artistName}</Col>
+          </Row>
 
-		  <Row>
-		    <Col xs={6} sm={3} md={2} className="text-right no-padding">Album Name:</Col>
-		    <Col xs={6} sm={9} md={10} onClick={()=>this.clickAlbum(album.collectionId)}><a role="button">{album.collectionName}</a></Col>
-		  </Row>
+          <Row>
+            <Col xs={6} sm={3} md={2} className="text-right no-padding">Album Name:</Col>
+            <Col xs={6} sm={9} md={10} onClick={()=>this.clickAlbum(album.collectionId)}><a role="button">{album.collectionName}</a></Col>
+          </Row>
 
-		  <Row>
-		    <Col xs={6} sm={3} md={2} className="text-right no-padding">Tracks:</Col>
-		    <Col xs={6} sm={9} md={10}>{album.trackCount}</Col>
-		  </Row>
+          <Row>
+            <Col xs={6} sm={3} md={2} className="text-right no-padding">Tracks:</Col>
+            <Col xs={6} sm={9} md={10}>{album.trackCount}</Col>
+          </Row>
 
-		  <Row>
-		    <Col xs={6} sm={3} md={2} className="text-right no-padding">Year Released:</Col>
-		    <Col xs={6} sm={9} md={10}>{new Date(album.releaseDate).getFullYear(album.year)}</Col>
-		  </Row>
+          <Row>
+            <Col xs={6} sm={3} md={2} className="text-right no-padding">Year Released:</Col>
+            <Col xs={6} sm={9} md={10}>{new Date(album.releaseDate).getFullYear(album.year)}</Col>
+          </Row>
         </Col>
       </Row>
     );

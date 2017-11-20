@@ -10,7 +10,7 @@ class ItunesAlbums extends Component {
 
     this.state = { albums: []};
     
-	this.updateAlbums = this.updateAlbums.bind(this);
+    this.updateAlbums = this.updateAlbums.bind(this);
   }
   
   updateAlbums(newAlbums) {
