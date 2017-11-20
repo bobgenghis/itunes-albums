@@ -22,8 +22,6 @@ class ItunesAlbums extends Component {
   render() {
     return (
       <div className="App">
-	    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css"
-          rel="stylesheet" />
         <header className="App-header">
           <SearchBar onSubmit={this.updateAlbums} />
         </header>
