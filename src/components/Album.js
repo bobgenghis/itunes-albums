@@ -1,12 +1,23 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {Row, Col} from 'react-bootstrap';
 import './Album.css';
 
-export const Album = (props) => {
-  let album = props.album;
-  return (
+export class Album extends Component {
+
+  constructor(props) {
+    super(props);
+    this.clickAlbum = this.clickAlbum.bind(this);
+  }
+
+  clickAlbum(collectionId) {
+    this.props.clickAlbum(collectionId);
+  }
+
+  render() {
+    let album = this.props.album;
+    return (
       <Row className="album">
-        <Col className="albumArt text-right" xs={4} sm={3} md={2}>
+        <Col className="albumArt text-right" xs={4} sm={3} md={2} onClick={()=>this.clickAlbum(album.collectionId)}>
           <img src={album.artworkUrl100} alt="Album Art"/>
         </Col>
 
@@ -33,4 +44,5 @@ export const Album = (props) => {
         </Col>
       </Row>
     );
+  }
 }
