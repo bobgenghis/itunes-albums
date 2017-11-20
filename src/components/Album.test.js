@@ -2,8 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Album} from './Album';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
+describe('<AlbumList />', () => {
   const testAlbum = {
     "wrapperType": "collection",
     "collectionType": "Album",
@@ -26,5 +25,9 @@ it('renders without crashing', () => {
     "releaseDate": "2001-05-14T07:00:00Z",
     "primaryGenreName": "Metal"
   };
-  ReactDOM.render(<Album album={testAlbum} />, div);
+
+  it('renders without crashing', () => {
+    const div = document.createElement('div');
+    ReactDOM.render(<Album album={testAlbum} />, div);
+  });
 });

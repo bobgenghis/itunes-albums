@@ -2,9 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {TracksModal} from './TracksModal';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  
+describe('<TracksModal />', () => {
   const collection = {
     "wrapperType": "collection",
     "collectionType": "Album",
@@ -96,6 +94,9 @@ it('renders without crashing', () => {
     "primaryGenreName": "Metal",
     "isStreamable": true
   }];
-  
-  ReactDOM.render(<TracksModal collection={collection} tracks={tracks} />, div);
+
+  it('renders without crashing', () => {
+	const div = document.createElement('div');
+    ReactDOM.render(<TracksModal collection={collection} tracks={tracks} />, div);
+  });
 });
