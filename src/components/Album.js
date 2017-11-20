@@ -29,7 +29,7 @@ export class Album extends Component {
 
 		  <Row>
 		    <Col xs={6} sm={3} md={2} className="text-right no-padding">Album Name:</Col>
-		    <Col xs={6} sm={9} md={10}>{album.collectionName}</Col>
+		    <Col xs={6} sm={9} md={10} onClick={()=>this.clickAlbum(album.collectionId)}><a href="#">{album.collectionName}</a></Col>
 		  </Row>
 
 		  <Row>
