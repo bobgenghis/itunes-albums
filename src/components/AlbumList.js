@@ -18,19 +18,11 @@ export class AlbumList extends Component {
     this.closeModal = this.closeModal.bind(this);
   }
 
-  clickAlbum(collectionId) {
-    this.getTracks(collectionId);
-    this.setState({
-        showModal: true,
-        selectedCollectionId: collectionId
-    });
-  }
-
   closeModal() {
     this.setState({showModal: false});
   }
 
-  getTracks(collectionId) {
+  clickAlbum(collectionId) {
     var self = this;
     const tracksUrl = 'https://itunes.apple.com/lookup?entity=song&id=' + collectionId;
     axios.get(tracksUrl, {
@@ -53,7 +45,9 @@ export class AlbumList extends Component {
 
         self.setState({
           collection: collection,
-          tracks: tracks
+          tracks: tracks,
+          showModal: true,
+          selectedCollectionId: collectionId
         });
       }
     })
