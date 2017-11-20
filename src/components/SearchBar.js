@@ -14,12 +14,14 @@ export class SearchBar extends Component {
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
-    this.handleOnKeyDown = this.handleOnKeyDown.bind(this);
+    this.onMenuHide = this.onMenuHide.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   
-  handleOnKeyDown(event) {
-    this.getAlbums();
+  onMenuHide(event) {
+    if (this.state.searchText && this.state.searchText.length > 1) {
+      this.getAlbums();
+    }
   }
   
   handleInputChange(searchText) {
@@ -65,9 +67,9 @@ export class SearchBar extends Component {
             <div className="inner-addon right-addon">
               <AsyncTypeahead
                 isLoading={this.state.isLoading}
-                promptText="Enter an artist name here"
+                placeholder="Enter an artist name here"
                 onInputChange={this.handleInputChange}
-                onMenuHide={this.handleOnKeyDown}
+                onMenuHide={this.onMenuHide}
                 submitFormOnEnter={true}
                 onSearch={searchTerm => {
                   var self = this;

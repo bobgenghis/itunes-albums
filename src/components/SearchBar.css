@@ -1,3 +1,7 @@
+.inner-addon input {
+  width: 100% !important;
+}
+
 .inner-addon {
   position: relative;
 }
